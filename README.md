@@ -1,167 +1,156 @@
-# 💳 Credit Card Fraud Analysis & Insights (Power BI)
+# 💳 Credit Card Fraud Risk Intelligence & Prevention System
 
-## 📌 Project Overview
+## 📌 Problem Statement
 
-Fraud detection is not just a technical challenge—it is a **business-critical problem** that directly impacts revenue, customer trust, and operational efficiency.
-
-This project explores a real-world credit card transactions dataset to **identify fraud patterns, uncover hidden risks, and translate them into actionable business strategies** using Power BI.
-
-Rather than focusing only on dashboards, this analysis emphasizes:
-
-* **When fraud happens**
-* **Where it concentrates**
-* **Why it occurs**
-* **What businesses should do about it**
+Financial fraud poses a significant challenge for digital payment systems, often occurring in subtle patterns that are difficult to detect through basic reporting.
+This project aims to analyze transaction data to uncover **hidden fraud patterns**, identify **high-risk segments**, and deliver **actionable strategies** to minimize fraud exposure.
 
 ---
 
-## 🎯 Objectives
+## 📊 Dataset Overview
 
-* Analyze transaction data to detect fraud patterns
-* Identify high-risk time periods, categories, and behaviors
-* Evaluate the effectiveness of existing risk classification
-* Provide **clear, business-focused recommendations**
-* Build an interactive dashboard for decision-making
+The dataset contains anonymized credit card transactions with the following key attributes:
 
----
+* Transaction Time (Hourly granularity)
+* Transaction Category (e.g., Grocery, etc.)
+* Merchant Information (e.g., Swiggy, Zomato)
+* Fraud Indicator (Fraud / Non-Fraud)
 
-## 📊 Dashboard Walkthrough
-
-### 1. Executive Dashboard
-
-The first layer provides a high-level overview of fraud activity:
-
-* Total transactions vs fraud cases
-* Fraud rate and financial impact
-* Distribution across categories and regions
-
-👉 This helps stakeholders quickly understand **the scale and severity of the problem**
+The dataset reveals that fraud is **extremely rare (0.17%)**, making detection more challenging and emphasizing the need for **pattern-based analysis rather than volume-based assumptions**.
 
 ---
 
-### 2. Analytical Deep Dive
+## 🎯 Key Business Questions
 
-The second layer focuses on identifying patterns:
-
-* **Time Analysis:** Fraud peaks significantly during late-night hours (around 2 AM)
-* **Category Analysis:** Electronics and E-commerce show higher fraud exposure
-* **Merchant Analysis:** High-frequency platforms contribute more to fraud activity
-* **Behavioral Patterns:** Fraud occurs in **spikes**, not as a steady trend
-
-👉 This reveals that fraud is **behavior-driven and context-dependent**, not random
+1. When does fraud activity peak during the day?
+2. Which categories and merchants are most vulnerable to fraud?
+3. How can fraud risk be reduced despite a very low fraud rate?
 
 ---
 
-### 3. Drill-Down Investigation
+## 📸 Dashboard Overview
 
-The final layer breaks down fraud into granular insights:
+![Overview](images/Dashboard.png)
 
-* Category-level contribution to total fraud
-* Risk band distribution and inconsistencies
-* Detection of anomalies and unexpected trends
+Suggested sections:
 
-👉 This stage highlights **data issues and model limitations**, which are critical for real-world systems
+* Executive Overview
+* Time-Based Fraud Analysis
+* Category & Merchant Insights
+* Risk Segmentation
 
 ---
 
 ## 🔍 Key Insights
 
-* Fraud rate is relatively low (~0.17%), but the **financial impact is significant**
-* Fraud activity is **time-sensitive**, with clear peaks during late-night hours
-* Certain categories (Electronics, E-commerce) carry **higher fraud risk**
-* Fraud patterns are **burst-based**, indicating organized or automated behavior
-* A large portion of fraud is classified as **Low Risk**, exposing weaknesses in the risk model
+### ⏱️ Time-Based Fraud Patterns
+
+* Fraud activity is **highly concentrated between 12 AM and 4 AM**
+* This suggests fraudsters exploit **low monitoring periods and reduced user vigilance**
+
+👉 Insight:
+
+> Fraud is not random—it is **time-targeted**, indicating behavioral intent rather than coincidence.
+
+---
+
+### 🛒 Category Risk Analysis
+
+* The **Grocery category contributes ~55% of total fraud cases**, making it the most vulnerable segment
+* This indicates either:
+
+  * High transaction volume masking fraud
+  * OR weaker validation mechanisms in this category
+
+👉 Insight:
+
+> Fraud is **category-concentrated**, not evenly distributed across transactions.
+
+---
+
+### 🏪 Merchant-Level Risk
+
+* Platforms like **Swiggy and Zomato** emerge as **top contributors to fraudulent transactions**
+* This suggests:
+
+  * High-frequency usage environments
+  * Faster transactions with lower friction
+
+👉 Insight:
+
+> Fraud clusters around **high-velocity, low-friction platforms**
+
+---
+
+### ⚠️ Low Fraud Rate, High Impact
+
+* Overall fraud rate is only **0.17%**, which is extremely low
+* However:
+
+  * Fraud is **strategically concentrated**
+  * A small subset of transactions drives most of the risk
+
+👉 Insight:
+
+> Fraud detection should focus on **precision targeting**, not broad filtering
 
 ---
 
 ## 💡 Business Recommendations
 
-* Apply additional verification for late-night transactions (12 AM–4 AM)
-* Strengthen controls for online (Card Not Present) transactions
-* Focus fraud monitoring on high-risk categories like Electronics
-* Build a merchant-level risk scoring system
-* Detect and block rapid transaction sequences (velocity checks)
-* Improve fraud risk classification models
-* Investigate anomalies in category-level fraud patterns
-* Enable real-time customer alerts and quick card blocking
+### 🔐 Strengthen Monitoring During High-Risk Hours
 
-👉 These recommendations bridge the gap between **data insights and real-world action**
+* Increase fraud detection sensitivity between **12 AM – 4 AM**
+* Implement real-time alerts and anomaly detection during this window
 
 ---
 
-## ⚠️ Challenges & Observations
+### 🛒 Apply Category-Based Risk Controls
 
-During the analysis, several important issues were identified:
-
-* Risk model misclassification (fraud concentrated in Low Risk segment)
-* Aggregation inconsistencies in some visuals
-* Unusual fraud distribution in certain categories (e.g., Groceries)
-* Time-series sorting issues affecting trend interpretation
-
-👉 Identifying these issues is crucial, as **incorrect insights can lead to poor business decisions**
+* Introduce stricter validation for **Grocery transactions**
+* Use adaptive authentication for high-risk categories
 
 ---
 
-## 🛠 Tools & Technologies
+### 🏪 Monitor High-Risk Merchant Platforms
 
-* **Power BI** – Dashboarding and visualization
-* **DAX** – KPI calculations and measures
-* **Data Modeling** – Relationship building and transformation
-
----
-
-## 📂 Project Structure
-
-```
-📦 credit-card-fraud-analysis-powerbi
- ┣ 📂 data
- ┣ 📂 dashboard
- ┣ 📂 images
- ┣ 📄 README.md
- ┗ 📄 insights.md
-```
+* Flag transactions from **Swiggy and Zomato** for additional verification
+* Apply dynamic risk scoring based on merchant behavior
 
 ---
 
-## 🚀 How to Use
+### 📊 Shift to Risk-Based Detection Strategy
 
-1. Download the `.pbix` file from the repository
-2. Open it using Power BI Desktop
-3. Navigate through:
+* Since fraud rate is low (0.17%), avoid blanket rules
+* Focus on:
 
-   * Dashboard → Overview
-   * Analysis → Pattern identification
-   * Drill-down → Detailed insights
-4. Use filters and slicers to explore different dimensions
+  * Time-based triggers
+  * Category-based anomalies
+  * Merchant-level risk concentration
 
 ---
 
-## 📈 Future Improvements
+## 🚀 Project Outcome
 
-* Integrate machine learning models for fraud prediction
-* Implement real-time data streaming for live monitoring
-* Enhance anomaly detection using advanced techniques
-* Improve risk segmentation accuracy
+This project evolves beyond a dashboard into a **Fraud Risk Intelligence System** that:
+
+* Identifies **when fraud is most likely to occur**
+* Detects **high-risk categories and merchant clusters**
+* Enables **targeted, data-driven fraud prevention strategies**
 
 ---
 
-## 👤 Author
+## 🛠️ Tools & Technologies
+
+* Power BI (Dashboarding & Visualization)
+* DAX (Custom Measures & KPIs)
+* Data Analysis Techniques
+
+---
+
+## 📌 Author
 
 **Yusuf M**
-
-Aspiring Data Analyst focused on building **insight-driven, business-oriented analytics solutions**
-
----
-
-## ⭐ Final Note
-
-This project demonstrates that **data analysis is not just about charts—it's about decisions**.
-
-The real value lies in transforming raw data into:
-
-* Clear insights
-* Practical recommendations
-* Measurable business impact
+Aspiring Data Analyst focused on solving real-world business problems through data-driven insights
 
 ---
-
