@@ -30,7 +30,7 @@ The dataset reveals that fraud is **extremely rare (0.17%)**, making detection m
 
 ## 📸 Dashboard Overview
 
-(https://github.com/Yusufmd24/credit-card-fraud-analysis-powerbi/Images/Dasboard.png)
+![Dashboard Overview](Images/Dashboard.png)
 
 Suggested sections:
 
