@@ -32,12 +32,15 @@ The dataset reveals that fraud is **extremely rare (0.17%)**, making detection m
 
 ![Dashboard Overview](Images/Dashboard.png)
 
-Suggested sections:
+Sections:
 
+* Key Insights
 * Executive Overview
 * Time-Based Fraud Analysis
 * Category & Merchant Insights
 * Risk Segmentation
+* Business Recommendation
+* Project Outcomes
 
 ---
 
@@ -151,6 +154,7 @@ This project evolves beyond a dashboard into a **Fraud Risk Intelligence System*
 ## 📌 Author
 
 **Yusuf M**
+
 Aspiring Data Analyst focused on solving real-world business problems through data-driven insights
 
 ---
